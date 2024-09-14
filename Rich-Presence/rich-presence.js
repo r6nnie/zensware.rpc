@@ -43,9 +43,7 @@ const updateRichPresence = (client) => {
       .setApplicationId(presenceConfig.applicationId)
       .setType(presenceConfig.activityType)
       .setURL(presenceConfig.url)
-      .setState(presenceConfig.state)
       .setName(presenceConfig.name)
-      .setDetails(presenceConfig.details)
       .setStartTimestamp(Date.now())
       });
     }
