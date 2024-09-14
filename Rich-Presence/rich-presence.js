@@ -43,20 +43,7 @@ const updateRichPresence = (client) => {
       .setApplicationId(presenceConfig.applicationId)
       .setType(presenceConfig.activityType)
       .setURL(presenceConfig.url)
-      .setState(presenceConfig.state)
       .setName(presenceConfig.name)
-      .setDetails(presenceConfig.details)
-      .setStartTimestamp(Date.now())
-      .setAssetsLargeImage(presenceConfig.largeImage)
-      .setAssetsLargeText(presenceConfig.largeImageText)
-      .setAssetsSmallImage(presenceConfig.smallImage)
-      .setAssetsSmallText(presenceConfig.smallImageText);
-
-    if (presenceConfig.buttons && presenceConfig.buttons.length > 0) {
-      presenceConfig.buttons.forEach(button => {
-        richPresence.addButton(button.label, button.url);
-      });
-    }
 
     client.user.setActivity(richPresence);
     client.user.setPresence({ status: "idle" });
