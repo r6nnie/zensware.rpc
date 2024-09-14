@@ -2,6 +2,7 @@
     "applicationId": "1",
     "activityType": "STREAMING", 
     "url": "https://www.twitch.tv/obs",
-    "name": "✰",
-      }
-    
+    "state": "state",
+    "name": "name",
+    "details": "details",
+  }
