@@ -15,8 +15,6 @@ const initializeDiscordClient = (config) => {
   const client = new Discord.Client({
     readyStatus: false,
     checkUpdate: false,
-  });
-
   client.once('ready', async () => {
     console.clear();
     console.log(`Connected to Discord Client: ${client.user.tag}`);
@@ -24,13 +22,11 @@ const initializeDiscordClient = (config) => {
     updateRichPresence(client);
 
     setInterval(() => updateRichPresence(client), 30000);
-  });
 
 
   client.login(config.Authorization_Token).catch(console.error);
 
   return client;
-};
 
 /**
  * 
@@ -45,7 +41,6 @@ const updateRichPresence = (client) => {
       .setURL(presenceConfig.url)
       .setName(presenceConfig.name)
       .setStartTimestamp(Date.now())
-      });
     }
 
 module.exports = initializeDiscordClient;
